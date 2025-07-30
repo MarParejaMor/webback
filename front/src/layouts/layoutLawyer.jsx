@@ -19,7 +19,7 @@ export default function LayoutLawyer() {
     };
 
   useEffect(() => {
-    const limit_time = 5 * 60 * 1000;
+    const limit_time = 1 * 60 * 1000;
     const warning_time = 4.5 * 60 * 1000;
 
     const sessionEnd = () => {
