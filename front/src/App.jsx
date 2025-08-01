@@ -23,6 +23,7 @@ import PendingCalendar from './lawyer/PendingCalendar.jsx';
 import ReminderList from './lawyer/ReminderList.jsx';
 import AuditList from './lawyer/AuditList.jsx';
 import RelatedCases from './lawyer/RelatedCases.jsx';
+import CaseCreate from './lawyer/CaseCreate.jsx';
 function App() {
   return (
     <BrowserRouter>
@@ -34,6 +35,7 @@ function App() {
           <Route path="account" element={<AccountData />} />
           <Route path="case-info/:id" element={<CaseInfo />} />
           <Route path="event-dashboard/:caseId" element={<EventDashboard />} />
+          <Route path="create-case" element={<CaseCreate />} /> 
           <Route
             path="evidence-dashboard/:caseId"
             element={<EvidenceDashboard />}
@@ -46,12 +48,14 @@ function App() {
             path="pending-calendar/:caseId"
             element={<PendingCalendar />}
           />
-          <Route path="appointments" element={<ReminderList />} />
+          <Route path="reminders" element={<ReminderList />} />
           <Route path="audit-list" element={<AuditList />} />
           <Route path="related-cases/:caseId" element={<RelatedCases />} />
         </Route>
         <Route path="/unauthorized" element={<LayoutUnauthorized />}></Route>
-        <Route path="/" element={<Lector />}>
+        <Route path="/" element={<ReaderLayout />}>
+          <Route index={true} element={<Lector/>}></Route>
+          <Route path='/lector' element={<Lector/>}></Route>
           <Route
             path="/lector/proceso/:processId"
             element={<ProcesoResumen />}
@@ -72,4 +76,3 @@ function App() {
 }
 
 export default App;
-
