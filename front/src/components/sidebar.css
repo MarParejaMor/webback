@@ -12,16 +12,16 @@
 }
 
 .sideLink{
-    color: var(--color-bone-white) !important;
+    color: var(--color-bone-white);
 }
 
 .sidebar ul li:hover{
-    color: var(--color-bone-white) !important;
+    color: var(--color-bone-white) ;
     background-color: #3d589b;
 }
 
 .sidebar ul li{
-    color: var(--color-bone-white) !important;
+    color: var(--color-bone-white) ;
     padding-top: 5px;
     padding-left: 10px;
     padding-bottom: 5px;
