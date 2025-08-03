@@ -17,13 +17,12 @@ const EvidenceDashboard = () => {
   const token = localStorage.getItem('token');
 
   useEffect(() => {
-    isCaseSelected(true);
     axios
       .get(`https://webback-x353.onrender.com/legalsystem/evidences/event/${eventId}`)
       .then((res) => setEvidences(res.data))
       .catch((err) => console.error('Error al obtener evidencias', err));
   }, [eventId]);
-
+  isCaseSelected(true);
   const handleFileSelect = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -179,6 +178,11 @@ const EvidenceDashboard = () => {
 };
 
 export default EvidenceDashboard;
+
+
+
+
+
 
 
 

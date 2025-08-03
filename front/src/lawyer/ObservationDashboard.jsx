@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useOutletContext } from 'react-router-dom';
 import { ArrowLeft, Trash2, Edit } from 'lucide-react';
 
 const ObservationDashboard = () => {
+  const { handleSetSelected: isCaseSelected, handleSetSelectedId: setCaseId } = useOutletContext();
   const { eventId } = useParams();
   const navigate = useNavigate();
   const [observations, setObservations] = useState([]);

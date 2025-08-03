@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useOutletContext} from 'react-router-dom'
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import { ArrowLeft, Trash2, Edit } from 'lucide-react';
