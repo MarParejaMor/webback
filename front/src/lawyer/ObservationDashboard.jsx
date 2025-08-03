@@ -14,6 +14,7 @@ const ObservationDashboard = () => {
   const token = localStorage.getItem('token');
 
   useEffect(() => {
+    isCaseSelected(true);
     const fetchObservations = async () => {
       try {
         const res = await fetch(`${baseURI}/observations/event/${eventId}`);
