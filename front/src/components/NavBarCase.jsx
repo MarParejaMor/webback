@@ -31,7 +31,7 @@ export default function CaseNavBar({caseId}){
                     <li>
                         <Link className='navLink2 flex flex-row items-center space-x-2 text-decoration-none' to={`/lawyer/pending-calendar/${caseId}`}>
                             <Icon.Calendar2Check className='h-4 w-4 inline-block'/>
-                            <p >Pendientes</p>
+                            <p>Calendario</p>
                         </Link>
                     </li>
                 </ul>
