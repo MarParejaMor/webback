@@ -23,7 +23,7 @@ export const getAccountData = async () =>{
     }
 
 export const getProfileData = async () =>{
-        const uri=PROFILE+userId;
+        const uri=PROFILE+1;
         const response = await fetch(uri,
             {
                 headers: {
