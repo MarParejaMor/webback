@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useOutletContext} from 'react-router-dom';
 import axios from 'axios';
 import { ArrowLeft, Trash2, Edit } from 'lucide-react';
 
