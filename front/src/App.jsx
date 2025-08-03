@@ -4,7 +4,7 @@ import LoginLayout from './layouts/loginLayout.jsx';
 import './App.css';
 import LayoutLawyer from './layouts/layoutLawyer.jsx';
 import LayoutUnauthorized from './layouts/layoutUnauthorized.jsx';
-import LawyerAccount from './lawyer/lawyerAccount.jsx';
+import AccountData from './pages/accountData.jsx';
 import EvidenciasLectura from './pages/lector/EvidenciasLectura.jsx';
 import Lector from './pages/lector/Lector.jsx';
 import ObservacionesLectura from './pages/lector/ObservacionesLectura.jsx';
@@ -28,7 +28,7 @@ function App() {
         <Route path="/login" element={<LoginLayout />}></Route>
         <Route path="/lawyer" element={<LayoutLawyer />}>
           <Route path="dashboard" element={<CaseDashboard />} />
-          <Route path="account" element={<LawyerAccount />} />
+          <Route path="account" element={<AccountData />} />
           <Route path="case-info/:id" element={<CaseInfo />} />
           <Route path="event-dashboard/:caseId" element={<EventDashboard />} />
           <Route path="create-case" element={<CaseCreate />} /> 

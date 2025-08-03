@@ -15,7 +15,7 @@ export default function CaseNavBar({caseId}){
     return (
         <>
         <div className='navbar2 w-full h-fit'>
-                <ul className='flex flex-row space-x-4 h-full items-center justify-center'>
+                <ul className='flex flex-row space-x-6 h-full items-center justify-center'>
                     <li>
                         <Link className='navLink2 flex flex-row items-center space-x-2 text-decoration-none' to={`/lawyer/case-info/${caseId}`}>
                             <Icon.Folder2Open className='h-4 w-4 inline-block'/>
