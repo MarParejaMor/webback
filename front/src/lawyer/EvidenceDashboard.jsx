@@ -4,6 +4,7 @@ import axios from 'axios';
 import { ArrowLeft, Trash2, Edit } from 'lucide-react';
 
 const EvidenceDashboard = () => {
+  const { handleSetSelected: isCaseSelected, handleSetSelectedId: setCaseId } = useOutletContext();
   const { eventId } = useParams();
   const navigate = useNavigate();
   const [evidences, setEvidences] = useState([]);
@@ -16,6 +17,7 @@ const EvidenceDashboard = () => {
   const token = localStorage.getItem('token');
 
   useEffect(() => {
+    isCaseSelected(true);
     axios
       .get(`https://webback-x353.onrender.com/legalsystem/evidences/event/${eventId}`)
       .then((res) => setEvidences(res.data))
@@ -177,8 +179,6 @@ const EvidenceDashboard = () => {
 };
 
 export default EvidenceDashboard;
-
-
 
 
 
