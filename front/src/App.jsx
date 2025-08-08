@@ -27,23 +27,23 @@ function App() {
       <Routes>
         <Route path="/login" element={<LoginLayout />}></Route>
         <Route path="/lawyer" element={<LayoutLawyer />}>
-          <Route path="/dashboard" element={<CaseDashboard />} />
-          <Route path="/account" element={<AccountData />} />
-          <Route path="/case-info/:id" element={<CaseInfo />} />
-          <Route path="/event-dashboard/:caseId" element={<EventDashboard />} />
-          <Route path="/create-case" element={<CaseCreate />} />
-          <Route path="/evidences/:eventId" element={<EvidenceDashboard />} />
+          <Route path="dashboard" element={<CaseDashboard />} />
+          <Route path="account" element={<AccountData />} />
+          <Route path="case-info/:id" element={<CaseInfo />} />
+          <Route path="event-dashboard/:caseId" element={<EventDashboard />} />
+          <Route path="create-case" element={<CaseCreate />} />
+          <Route path="evidences/:eventId" element={<EvidenceDashboard />} />
           <Route
-            path="/observations/:eventId"
+            path="observations/:eventId"
             element={<ObservationDashboard />}
           />
           <Route
-            path="/pending-calendar/:caseId"
+            path="pending-calendar/:caseId"
             element={<PendingCalendar />}
           />
-          <Route path="/reminders" element={<ReminderList />} />
-          <Route path="/audit-list" element={<AuditList />} />
-          <Route path="/related-cases/:caseId" element={<RelatedCases />} />
+          <Route path="reminders" element={<ReminderList />} />
+          <Route path="audit-list" element={<AuditList />} />
+          <Route path="related-cases/:caseId" element={<RelatedCases />} />
         </Route>
         <Route path="/unauthorized" element={<LayoutUnauthorized />}></Route>
         <Route path="/" element={<ReaderLayout />}>
