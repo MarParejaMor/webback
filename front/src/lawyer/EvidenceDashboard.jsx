@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate, useOutletContext} from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { ArrowLeft, Trash2, Edit } from 'lucide-react';
 
 const EvidenceDashboard = () => {
-  const { handleSetSelected: isCaseSelected, handleSetSelectedId: setCaseId } = useOutletContext();
   const { eventId } = useParams();
   const navigate = useNavigate();
   const [evidences, setEvidences] = useState([]);
@@ -22,7 +21,7 @@ const EvidenceDashboard = () => {
       .then((res) => setEvidences(res.data))
       .catch((err) => console.error('Error al obtener evidencias', err));
   }, [eventId]);
-  isCaseSelected(true);
+
   const handleFileSelect = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -64,8 +63,8 @@ const EvidenceDashboard = () => {
     } catch (err) {
       console.error('Error al guardar evidencia', err);
     }
-    window.location.reload();
 
+    window.location.reload();
   };
 
   const handleEdit = (evidence) => {
@@ -75,7 +74,6 @@ const EvidenceDashboard = () => {
       filePath: evidence.filePath,
     });
     setEditingId(evidence.evidenceId);
-
   };
 
   const handleDelete = async (evidenceId) => {
@@ -107,7 +105,10 @@ const EvidenceDashboard = () => {
         </button>
       </div>
 
-      <form onSubmit={handleSubmit} className="bg-gray-50 p-4 text-[#1C2C54] rounded-lg space-y-4 border border-gray-300 mb-8">
+      <form
+        onSubmit={handleSubmit}
+        className="bg-gray-50 p-4 text-[#1C2C54] rounded-lg space-y-4 border border-gray-300 mb-8"
+      >
         <input
           type="text"
           name="evidenceType"
@@ -133,14 +134,19 @@ const EvidenceDashboard = () => {
         />
         <button
           type="submit"
-          className="bg-[#1C2C54]  hover:bg-blue-700 text-white px-4 py-2 rounded shadow"
+          className="bg-[#1C2C54] hover:bg-blue-700 text-white px-4 py-2 rounded shadow"
         >
           {editingId ? 'Actualizar evidencia' : 'Agregar evidencia'}
         </button>
       </form>
 
-      {evidences.length === 0 ? (
-        <p className="text-gray-500">No hay evidencias registradas.</p>
+      {!evidences || evidences.length === 0 ? (
+        <div className="mt-6 p-4 bg-white rounded-lg shadow-md text-center border border-gray-300">
+          <h3 className="text-[#6E1E2B] text-lg font-semibold mb-2">📂 Sin evidencias disponibles</h3>
+          <p className="text-[#1C2C54] text-sm">
+            Este evento no tiene evidencias registradas aún. Puedes añadir una para comenzar a documentar.
+          </p>
+        </div>
       ) : (
         <ul className="space-y-4">
           {evidences.map((ev) => (
@@ -178,8 +184,6 @@ const EvidenceDashboard = () => {
 };
 
 export default EvidenceDashboard;
-
-
 
 
 
